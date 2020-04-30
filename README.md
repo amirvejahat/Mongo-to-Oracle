@@ -1,12 +1,25 @@
+## Mongo To Oracle
 
-## Schema
+this is a simple script to transmit data from mongo to oracle
 
-this file must created manually based on mongo fields and table columns 
+## How to Run
+
+1. install oracle oracle-clientinstant-basic
+2. install redis server and make sure listen to default port 6379 
+3. make sure you've an access to mongo database (shard/single instance) [mongo -h hostname -p port -d DB -c COLLECTION ]
+4. change config file with your configuration hostname/username/password and etc.
+
+[ you don't have to create listener.ora file to connect to oracle we'll handle in connections in Connections.py file ] 
+
+## Schema.txt
+
+this file is used for mapping mongo fields and oracle columns
 
 
-## Evaluate
+## Evaluate.txt
 
-in initial connection to oracle databse evaluate.txt will generated automatically based on table structure 
+in initial connection to oracle database evaluate.txt will generated automatically based on table structure.  
+
 evaluate.txt file helps us to make sure data_type is correct before insert to the database
 
 ## Todo
@@ -17,12 +30,11 @@ evaluate.txt file helps us to make sure data_type is correct before insert to th
 - [x]  create requirements.txt file for build package
 - [x]  create config file
 - [x]  run app in virtual environment 
-- [x]  handle connection_log_id[bson type] issue
-- [x]  add PS*/SQL returning CONNECTION_LOG_ID to make sure connection_logs inserted successfully
-- [x]  create a class to connect to postgresql to get connection sequential number
+- [ ]  handle connection_log_id[bson type] issue
+- [ ]  add PS*/SQL returning CONNECTION_LOG_ID to make sure connection_logs inserted successfully
 - [x]  performance tuning (Current 10 Pool,10K BatchSize,500K Records Data  80s)
 - [x]  change the code to be compatible with multi threads
 - [x]  insert corrupted cdr's connection_id to redis
-- [x]  add failover mongo connection 
+- [ ]  add failover mongo connection 
 - [x]  export data structure of oracle automaticlly
-- [x]  schema.corrupted_cdr might get very large and fill up memory
+- [x]  fix schema.corrupted_cdr might get very large and fill up memory
