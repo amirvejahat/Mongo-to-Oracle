@@ -1,3 +1,14 @@
+
+## Schema
+
+this file must created manually based on mongo fields and table columns 
+
+
+## Evaluate
+
+in initial connection to oracle databse evaluate.txt will generated automatically based on table structure 
+evaluate.txt file helps us to make sure data_type is correct before insert to the database
+
 ## Todo
 
 - [x]  install oracle-clientinstant-basic package
