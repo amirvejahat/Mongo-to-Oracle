@@ -9,7 +9,7 @@ this is a simple script to transmit data from mongo to oracle
 3. make sure you've an access to mongo database (shard/single instance) [mongo -h hostname -p port -d DB -c COLLECTION ]
 4. change config file with your configuration hostname/username/password and etc.
 
-[ you don't have to create listener.ora file to connect to oracle we'll handle in connections in Connections.py file ] 
+[ you don't have to create listener.ora file to connect to oracle we'll handle in OracleConnection Class ] 
 
 ## Schema.txt
 
